@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Currículum</title>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<header>
+		<h1>Erik Kees</h1>
+		<p>Correo electrónico: erik_kees@hotmail.com</p>
+		<p>Teléfono: +54223-1234567</p>
+	</header>
+	<main>
+		<section class="experiencia">
+			<h2>Experiencia Laboral</h2>
+			<article>
+				<h3>Instituto Juan Gutenberg</h3>
+				<p>Profesor titular</p>
+				<p>2015 - actual</p>
+				<ul>
+					<li>Profesor de física 4to y 6to año</li>
+					<li>Jefe de departamento</li>
+					<li>Director del club de ciencias</li>
+				</ul>
+			</article>
+			<article>
+				<h3>Colegio Carlos Tejedor</h3>
+				<p>Profesor titular</p>
+				<p>2012 - actual</p>
+				<ul>
+					<li>Profesor de Química 5to año</li>
+				</ul>
+			</article>
+			<article>
+				<h3>Escuela de Educación Técnica nº 3 "Domingo Faustino Sarmiento"</h3>
+				<p>Profesor titular</p>
+				<p>2012 - actual</p>
+				<ul>
+					<li>Profesor de Laboratorio de Química analítica 6to año</li>
+					<li>Profesor de Química orgánica y biológica 6to año</li>
+				</ul>
+			</article>
+		</section>
+		<section class="educacion">
+			<h2>Educación</h2>
+			<article>
+				<h3>Escuela de Educación Técnica Nº 4 “Alfonsina Storni”</h3>
+				<p>Título obtenido: Técnico en Industria de la Alimentación
+					</p>
+				<p>1990 - 1996</p>
+			</article>
+			<article>
+				<h3>Facultad de Ciencias Exactas y Naturales. Universidad Nacional de Mar del Plata</h3>
+				<p>Título obtenido: Profesor de Física
+					</p>
+				<p>1996 - 2001</p>
+			</article>
+		</section>
+		<section class="habilidades">
+			<h2>Habilidades</h2>
+			<article>
+				<h3>Conocimientos de programación</h3>
+				<div class="barra">
+					<div class="progreso progreso1"></div>
+				</div>
+				<h3>Manejo de grupos</h3>
+				<div class="barra">
+					<div class="progreso progreso2"></div>
+				</div>
+			</article>
+		</section>
+	</main>
+	<footer>
+		<button onclick="descargarPDF()">Descargar PDF</button>
+		<p>Copyright © 2023</p>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script>
+      function descargarPDF() {
+        const doc = new jsPDF();
+        const infoPersonal = document.getElementById("info-personal");
+        doc.html(infoPersonal, {
+          callback: function () {
+            doc.save("mi-curriculum.pdf");
+          },
+        });
+      }
+    </script>
+</body>
+</html>
